@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Admin Panel — THE FASTEST BRAND</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+<header><div class="brand">⚡ <b>THE FASTEST BRAND</b><small>OWNER / ADMIN PANEL</small></div><a href="index.html">← Back to Store</a></header>
+<div class="layout">
+<aside>
+<h3>Admin Menu</h3>
+<button class="active" onclick="showTab('dashboard')">📊 Dashboard</button>
+<button onclick="showTab('products')">🛒 Products</button>
+<button onclick="showTab('orders')">📦 Orders</button>
+<button onclick="showTab('customers')">👥 Customers</button>
+<button onclick="showTab('banners')">🖼️ Banners</button>
+<button onclick="showTab('complaints')">⚠️ Complaints</button>
+<button onclick="showTab('reviews')">⭐ Reviews</button>
+<button onclick="showTab('settings')">⚙ Settings</button>
+</aside>
+<main>
+<section id="dashboard" class="tab"><h1>Dashboard</h1><div class="stats"><div><span>🛒</span><b id="sProducts">8</b><small>Total Products</small></div><div><span>👥</span><b>1,248</b><small>Total Customers</small></div><div><span>📦</span><b>856</b><small>Total Orders</small></div><div><span>₹</span><b>₹2,48,620</b><small>Total Sales</small></div></div><div class="panel"><h2>Store Overview</h2><div class="chart"><i style="height:35%"></i><i style="height:55%"></i><i style="height:42%"></i><i style="height:70%"></i><i style="height:58%"></i><i style="height:82%"></i><i style="height:95%"></i></div></div></section>
+<section id="products" class="tab hidden"><h1>Products</h1><div class="panel"><form id="productForm"><input id="pName" placeholder="Product name" required><input id="pPrice" type="number" placeholder="Price" required><input id="pQty" type="number" placeholder="Quantity" required><select id="pCat"><option>Groceries</option><option>Fruits & Vegetables</option><option>Dairy & Breakfast</option><option>Snacks & Beverages</option><option>Personal Care</option><option>Household</option><option>Baby Care</option><option>Pet Care</option></select><button>Add Product</button></form><div id="adminProducts"></div></div></section>
+<section id="orders" class="tab hidden"><h1>Orders</h1><div class="panel"><table><tr><th>Order ID</th><th>Customer</th><th>Amount</th><th>Status</th></tr><tr><td>#FB1024</td><td>Rahul Sharma</td><td>₹649</td><td>Delivered</td></tr><tr><td>#FB1025</td><td>Ankit Verma</td><td>₹899</td><td>Preparing</td></tr></table></div></section>
+<section id="customers" class="tab hidden"><h1>Customers</h1><div class="panel"><table><tr><th>Sr</th><th>Name</th><th>Mobile</th><th>Email</th></tr><tr><td>1</td><td>Rahul Sharma</td><td>9000000001</td><td>rahul@example.com</td></tr><tr><td>2</td><td>Ankit Verma</td><td>9000000002</td><td>ankit@example.com</td></tr></table></div></section>
+<section id="banners" class="tab hidden"><h1>Banner Management</h1><div class="panel"><input type="file" accept="image/*"><input placeholder="Banner heading"><input placeholder="Banner subtitle"><button>Save Banner</button></div></section>
+<section id="complaints" class="tab hidden"><h1>Complaints</h1><div class="panel"><p>No new complaints.</p></div></section>
+<section id="reviews" class="tab hidden"><h1>Reviews</h1><div class="panel"><p>⭐ 4.8/5 average rating</p><p>Fresh products and fast delivery.</p></div></section>
+<section id="settings" class="tab hidden"><h1>Admin Settings</h1><div class="panel"><input placeholder="Change admin password" type="password"><button>Update Password</button><p>Backend/database can be connected here.</p></div></section>
+</main></div><script src="admin.js"></script></body></html>
