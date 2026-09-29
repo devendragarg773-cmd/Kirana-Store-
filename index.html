@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreshKart — Fast Grocery Delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="loader"><div class="loader-logo">⚡</div><b>FRESH<span>KART</span></b><small>Loading fresh things...</small></div>
+<header class="header">
+  <div class="brand"><div class="brand-mark">⚡</div><div><strong>FRESH<span>KART</span></strong><small>Fresh • Fast • Everyday</small></div></div>
+  <button class="delivery"><span>📍</span><small>Deliver to</small><b>Sayala ▾</b></button>
+  <div class="search"><span>⌕</span><input id="search" placeholder="Search groceries, fruits, snacks..."><kbd>Ctrl K</kbd></div>
+  <button class="icon-btn" onclick="openDrawer('wishlist')">♡<i id="wishBadge">0</i><small>Wishlist</small></button>
+  <button class="icon-btn" onclick="openModal('loginModal')">♙<small>Account</small></button>
+  <button class="cart-btn" onclick="openDrawer('cart')">🛒<b id="cartCount">0</b><span>₹<em id="cartTotal">0</em></span></button>
+  <button class="gear" onclick="openDrawer('settings')">⚙</button>
+</header>
+<nav class="nav"><button class="allcat" onclick="toggleCats()">☰ All Categories</button><a class="active" href="#home">Home</a><a href="#products">Shop</a><a href="#deals">Deals</a><a href="#categories">Categories</a><a href="#why">Why FreshKart?</a><a href="#support">Support</a></nav>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">⚡ SUPERFAST DELIVERY <span>10–30 MIN</span></div>
+    <h1>Fresh groceries.<br><em>Delivered fast.</em></h1>
+    <p>Everything your home needs — handpicked quality, everyday prices and a delivery experience built around you.</p>
+    <div class="hero-actions"><button class="primary" onclick="scrollToProducts()">Start Shopping <b>→</b></button><button class="ghost" onclick="showToast('Fresh deals are loading ✨')">View Today's Deals</button></div>
+    <div class="proof"><div class="avatars">👨‍🦱👩‍🦰👨‍🦲</div><b>50K+ happy shoppers</b><span>★★★★★ 4.9</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="ring r1"></div><div class="ring r2"></div><div class="hero-glow"></div>
+    <div class="basket-art">🛒</div><div class="food apple">🍎</div><div class="food orange">🍊</div><div class="food broccoli">🥦</div><div class="food milk">🥛</div>
+    <div class="speed-card">⚡ <b>FAST</b><small>at your door</small></div>
+    <div class="fresh-card">✓ 100%<small>Fresh promise</small></div>
+  </div>
+</section>
+
+<section class="trust-row"><div>⚡<b>10–30 min</b><small>Fast delivery</small></div><div>🥬<b>100% fresh</b><small>Quality checked</small></div><div>🔒<b>Secure pay</b><small>Safe checkout</small></div><div>↩<b>Easy returns</b><small>Simple process</small></div></section>
+
+<section id="categories" class="section">
+  <div class="section-head"><div><small class="label">SHOP BY CATEGORY</small><h2>Everything you need</h2></div><button class="text-btn" onclick="showAll()">View all →</button></div>
+  <div class="category-grid" id="categoryGrid"></div>
+</section>
+
+<section id="deals" class="section">
+ <div class="section-head"><div><small class="label">TODAY'S PICKS</small><h2>Deals made for you 🔥</h2></div><div class="deal-timer">Ends in <b id="timer">08:42:17</b></div></div>
+ <div class="deal-grid"><article class="deal deal-green"><div><small>FRESH EVERY DAY</small><h3>Farm fresh<br>vegetables</h3><button onclick="filterProducts('Fruits & Vegetables')">Shop now →</button></div><span>🥦🥕🥬</span></article>
+ <article class="deal deal-yellow"><div><small>WEEKEND SPECIAL</small><h3>Fruits up to<br>25% off</h3><button onclick="filterProducts('Fruits & Vegetables')">Grab deal →</button></div><span>🍎🍊🍓</span></article>
+ <article class="deal deal-purple"><div><small>SNACK ATTACK</small><h3>Crunch & sip<br>your favourites</h3><button onclick="filterProducts('Snacks & Beverages')">Explore →</button></div><span>🍿🥤🍫</span></article></div>
+</section>
+
+<section id="products" class="section products-section">
+ <div class="section-head"><div><small class="label">POPULAR RIGHT NOW</small><h2>Best sellers</h2></div><div class="filters"><button class="filter active" onclick="filterProducts('All')">All</button><button class="filter" onclick="filterProducts('Groceries')">Groceries</button><button class="filter" onclick="filterProducts('Fruits & Vegetables')">Fresh</button><button class="filter" onclick="filterProducts('Snacks & Beverages')">Snacks</button></div></div>
+ <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section id="why" class="why"><div><small class="label">WHY PEOPLE LOVE US</small><h2>Small details.<br><em>Big difference.</em></h2><p>From careful packing to quick doorstep delivery, every part of FreshKart is designed to make everyday shopping easier.</p></div><div class="why-cards"><article>🧺<b>Carefully packed</b><small>Every order checked before dispatch.</small></article><article>⚡<b>Actually fast</b><small>Smart local delivery routes.</small></article><article>💛<b>Customer first</b><small>Friendly help when you need it.</small></article><article>💸<b>Honest prices</b><small>Great value without the fuss.</small></article></div></section>
+
+<section id="support" class="newsletter"><div><small class="label">STAY IN THE LOOP</small><h2>Deals in your inbox.</h2><p>Get fresh offers and useful updates.</p></div><div class="subscribe"><input placeholder="Your email address"><button onclick="showToast('You are subscribed 🎉')">Subscribe</button></div></section>
+</main>
+
+<footer><div><div class="brand"><div class="brand-mark">⚡</div><div><strong>FRESH<span>KART</span></strong><small>Fresh • Fast • Everyday</small></div></div><p>Fresh essentials, delivered with care.</p></div><div><b>Quick links</b><a href="#products">Shop</a><a href="#deals">Deals</a><a href="#categories">Categories</a></div><div><b>Help</b><a onclick="openDrawer('settings')">Support</a><a onclick="openModal('loginModal')">My Account</a></div><div><b>Contact</b><span>📞 +91 90000 00000</span><span>✉ support@freshkart.in</span></div></footer>
+
+<div class="cat-pop" id="catPop"><div id="catPopInner"></div></div>
+<div class="drawer-backdrop" id="backdrop" onclick="closeDrawers()"></div>
+<aside class="drawer" id="drawer"><div class="drawer-head"><h2 id="drawerTitle">Cart</h2><button onclick="closeDrawers()">×</button></div><div id="drawerBody"></div></aside>
+
+<div class="modal" id="loginModal"><div class="modal-box"><button class="modal-close" onclick="closeModal('loginModal')">×</button><div class="modal-icon">♙</div><h2>Welcome back</h2><p>Save your details for faster checkout.</p><input id="name" placeholder="Full name"><input id="phone" placeholder="Mobile number"><input id="email" placeholder="Email address"><input id="pin" placeholder="Pincode"><button class="primary full" onclick="saveProfile()">Save & Continue →</button></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body></html>
